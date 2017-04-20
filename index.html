@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html ng-app='myApp'>
-<head>
-	<title>INDEX</title>
-	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js'></script>
-	<script src='app.js'></script>
-</head>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="app.js"></script>
 <body>
-<div ng-controller='myCtrl'>
-	<h3>Author</h3>{{datas}}
-	<h5>Title</h5>{{datas[0].author}}
-	<p>Description{{datas[0].author}}</p>
-	
-	<button ng-click='<a href="http://www.google.com"/>'</button>
-	<img src="">
+
+<div ng-app="myApp" ng-controller="myCtrl"> 
+
+<p><b>The news are:</b></p>
+<div ng-repeat="article in myWelcome.articles">
+<h3> Author: {{article.author}}</h3>
+<h5> Title: {{article.title}}</h5>
+<p> Description : {{article.description}}</p>
+<img src="{{article.urlToImage}}">
 </div>
+</div>
+
+<p>The $http service requests a page on the server, and the response is set as the value of the "myWelcome" variable.</p>
+
 
 </body>
 </html>
